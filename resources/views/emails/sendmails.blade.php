@@ -3,113 +3,90 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AfricGEM | AfricICl</title>
+    <title>AfricGEM</title>
     <style>
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #f3f2ef;
-            display: flex; 
-            justify-content: center;
-            margin: 0;
-            padding: 0;
-            color: #333;
-            height: 100vh;
-        }
+        /* Bootstrap styles for email */
         .container {
-            max-width: 600px;
-            margin: 0 auto;
-            background-color: #fff;
-            padding: 20px;
-            border: 1px solid #ddd;
-            height:100%;
-        }
-        .header {
-          width:100%;
-            height: 1.5rem;
-            margin: 0 auto;
-        }
-        .header img {
-          height: 100%;
-          width:100%;
-          transform: scale(70%);
-          object-fit: contain
-          
-        }
-
-        .content {
-            padding: 2.5rem 0;
-        }
-        .content h1 {
-            font-size: 1.5rem;
-            margin-bottom: 10px;
-            text-transform: capitalize;
-        }
-         .content img {
             width: 100%;
-            height: 15rem;
-            margin: 20px 0;
-            object-fit: cover;
+            margin: 0 auto;
+            max-width: 600px;
+            padding: 20px;
         }
-        .content p {
-            font-size: 16px;
-            line-height: 1.5;
-        }
-        .footer {
+        .header, .footer {
+            background-color: darkgreen;
+            color: white;
+            padding: 20px;
             text-align: center;
-            margin-top: 20px;
-            padding-top: 10px;
-            border-top: 1px solid #ddd;
+        }
+        .content {
+            background-color: #f8f9fa;
+            padding: 20px;
+        }
+        .btn-primary {
+            display: inline-block;
+            padding: 10px 20px;
+            color: #fff;
+            background-color: #007bff;
+            border-color: #007bff;
+            text-decoration: none;
+            border-radius: 5px;
+        }
+        .btn-primary:hover {
+            background-color: #0056b3;
+            border-color: #004085;
+        }
+        .text-center {
+            text-align: center;
+        }
+        .mt-3 {
+            margin-top: 1rem;
         }
         .social-icons {
-            display: flex;
-            justify-content: center;
-            
-            
-        }
-
-        .social-icons a {
-            margin: 0 10px;
-            color: darkgreen;
-            text-decoration: none;
-            font-size: 1.5rem;
+            margin-top: 20px;
         }
         .social-icons img {
-            width:2rem;
+            width: 30px;
+            height: 30px;
+            margin: 0 10px;
+            display: inline-block;
+        }
+        .header-image {
+            max-width: 100%;
+            height: auto;
+            margin-top: 20px;
         }
     </style>
 </head>
 <body>
-
-<div class="container">
-    <div class="header">
-    
-        <img src="https://pbs.twimg.com/media/GQivQsvWoAAbedU?format=png&name=small" alt="">
-    </div>
-    <div class="content">
-        <h1 style="color: black;">
-         {{ $message_head }}
-        </h1>
-        @if($image_url)
-            <img src="{{ $image_url }}" alt="Image">
-        @endif
-        <p style="color: black;">
-        {{ $message_body }}
-        </p>
-        <p style="color: black;"><strong>{{ $message_ending }}</strong></p>
-    </div>
-    <div class="footer">
-        <p>Follow us on</p>
-        <div class="social-icons">
-           <a href="https://www.facebook.com/profile.php?id=61559466455355&mibextid=ZbWKwL" target="_blank">
-              <img src="https://th.bing.com/th/id/R.5d6ea38a769498dfc19fe6389d14db39?rik=XWEQ%2f%2bl01nCbHw&pid=ImgRaw&r=0" alt="Facebook">
-            </a>
-            <a href="https://x.com/AfricGEM?t=oJiyQR-Lw2rde3TqyFC2sQ&s=08" target="_blank">
-              <img src="https://th.bing.com/th/id/OIP.ZweGejPwbT5wwshQ2-8qUQHaHa?rs=1&pid=ImgDetMain" alt="X">
-            </a>
-            <a href="https://africtv-research.web.app/" target="_blank">
-              <img src="https://www.logolynx.com/images/logolynx/8d/8d22fff92e7d5249d75a8f931a1618c6.png" alt="Research Website">
-            </a>
+    <div class="container">
+        <div class="header">
+            <h1>{{ $title }}</h1>
+           <img src="{{ $attachments }}" alt="AfricTv" class="header-image">
+        </div>
+        <div class="content">
+            <h2>{{ $message_head }}</h2>
+            <p>{{ $message_body }}</p><!-- 
+            <p class="text-center mt-3">
+                <a href="#" class="btn-primary">Verify Email</a>
+            </p> -->
+            <p>{{ $message_ending }}</p>
+            <p>Best regards,<br> Omobolanle Fashakin <br> AfricICL | AfricTv </p>
+        </div>
+        <div class="footer">
+            <p>&copy; 2024 AfricInfo. All rights reserved.</p>
+            <div class="social-icons">
+                <p>Follow us:</p>
+                <a href="https://x.com/TvAfric47294">
+                    <img src="https://th.bing.com/th/id/OIP.ZweGejPwbT5wwshQ2-8qUQHaHa?rs=1&pid=ImgDetMain" alt="X (Twitter)">
+                </a>
+                <a href="https://www.facebook.com/profile.php?id=61559466455355&mibextid=ZbWKwL">
+                    <img src="https://th.bing.com/th/id/OIP.sLFgKczZ7c771m9TOYCyCwHaFL?rs=1&pid=ImgDetMain" alt="Facebook">
+                </a>
+                <a href="https://africtv-research.web.app/">
+                    <img src="https://th.bing.com/th/id/R.a9147d6d14703c6cfaffc7703d3e30b1?rik=qvnWPrUgPhtZuA&pid=ImgRaw&r=0" alt="Afric Research Website Website">
+                </a>
+            </div>
         </div>
     </div>
-</div></Body>
+</body>
 </html>

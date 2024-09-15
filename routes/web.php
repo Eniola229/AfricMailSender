@@ -37,7 +37,7 @@ Route::middleware('auth')->group(function () {
     Route::post('sendmails', [SendMailController::class, 'store'])->name('sendmails.store');
     Route::get('mails', [MailsController::class, 'show'])->name('mails.show');
     Route::get('edituser/{id}', [EditUserController::class, 'show'])->name('edituser.show');
-    Route::put('edituserdetails/{id}', [EditUserController::class, 'update'])->name('edituserdetails.update');
+    Route::put('edituserdetails/{id}', [EditUserController::class, 'update'])->name('edituserdetails.update'); 
 
     Route::delete('/viewusers', [AddUserController::class, 'destroy'])->name('deleteuser.destroy');
 
